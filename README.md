@@ -89,3 +89,26 @@ Test if everything is ok
 sudo nginx -t
 sudo service nginx restart
 ```
+### Docker
+
+Please follow this guide from the last Lab to install docker and docker-compose [Setup Docker](https://github.com/egonzalezt/Lab2-ST0263#install-docker) 
+
+### React
+
+The main reason to use docker is to isolate the dependences to avoid problems on the EC2 Machine, react will use docker-compose and Dockerfile when the machine starts or the container fails restart automatically, Dockerfile and docker-compose are located on this repo on frontend folder.
+
+When everthing is done please run this command where is located your docker-compose.yml 
+
+```bash
+sudo docker-compose up -d
+```
+
+### Express
+
+The main reason to use docker is to isolate the dependences to avoid problems on the EC2 Machine, react will use docker-compose and Dockerfile when the machine starts or the container fails restart automatically, Dockerfile and docker-compose are located on this repo on backend folder.
+
+When everthing is done please run this command where is located your docker-compose.yml 
+
+```bash
+sudo docker-compose up -d
+```
