@@ -112,3 +112,70 @@ When everthing is done please run this command where is located your docker-comp
 ```bash
 sudo docker-compose up -d
 ```
+
+### Mongodb
+
+Follow the guide provided by Mongodb team to install Mongodb Community edition on your AWS EC2 Machine [Setup Mongo](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/) 
+
+#### Create super user
+
+afther mongodb installation is done inside your EC2 machine please run 
+```bash 
+mongo mongodb://localhost:27017
+```
+inside mongoshell run this to create admin user
+
+```mongo
+> use admin
+> db.createUser(
+{
+user: "Admin",
+pwd: "myNewPassword",
+roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+}
+);
+```
+run this to create regular user who has only access to bookstore db
+
+```mongo
+> use admin
+> db.createUser({
+      user: "lab3",
+      pwd: "lab3bookstore",
+      roles: [
+                { role: "userAdmin", db: "bookstore" },
+                { role: "dbAdmin",   db: "bookstore" },
+                { role: "readWrite", db: "bookstore" }
+             ]
+  });
+ ```
+if everything is ok mongo returns a message like {ok}
+ 
+Now enable the authorization on mongo db conf file 
+```bash
+sudo nano /etc/mongod.conf
+```
+locate this section
+```yml 
+## security:
+```
+
+Modify like this
+
+```
+security:
+authorization: "enabled"
+```
+Finally restart the service
+
+```
+sudo service mongodb restart
+```
+
+#### Connect to database
+
+To connect to the database on the backend using mongoose the database url look like this
+
+```bash
+mongo "mongodb://Admin:${DBPASSWORD}@<host>:<port>/admin?authSource=admin"
+```
