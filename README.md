@@ -1,5 +1,22 @@
 # Lab3-ST0263
 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#objetive">Objetive</a></li>
+    <li><a href="#how-i-design-it">How I design it</a></li>
+    <li><a href="#setup">Setup</a></li>
+        <ol>
+            <li><a href="#docker">Docker</a></li>
+            <li><a href="#nginx-1">Nginx</a></li>
+            <li><a href="#react">React</a></li>
+            <li><a href="#express">ExpressJs</a></li>
+            <li><a href="#mongodb">Mongodb</a></li>
+        </ol>
+    <li><a href="#demo">Demo</a></li>     
+  </ol>
+</details>
+
 ## Objetive
 
 The objetive of this project is to deploy a monolitic application build using MERN(Mongo, Express, React, Node) provided by the teacher, the idea is use docker on React and Express but Mongodb running local on AWS EC2 Machine, and the React front-end require HTTPS using SSL provided by Let's Encrypt.
