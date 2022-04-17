@@ -179,7 +179,7 @@ sudo service mongodb restart
 To connect to the database on the backend using mongoose the database url look like this
 
 ```bash
-mongo "mongodb://Admin:${DBPASSWORD}@<host>:<port>/admin?authSource=admin"
+mongo "mongodb://${DBUSER}:${DBPASSWORD}@<host>:<port>/<dbname>?authSource=admin"
 ```
 
 ## Demo 
