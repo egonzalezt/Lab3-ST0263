@@ -2,7 +2,9 @@
 
 ## Objetive
 
-The objetive of this project is to deploy a monolitic application build using MERN(Mongo, Express, React, Node) provided by the teacher, the idea is use docker on React and Express but Mongodb running local on AWS EC2 Machine, and the React front-end require HTTPS using SSL provided by Let's encript.
+The objetive of this project is to deploy a monolitic application build using MERN(Mongo, Express, React, Node) provided by the teacher, the idea is use docker on React and Express but Mongodb running local on AWS EC2 Machine, and the React front-end require HTTPS using SSL provided by Let's encrypt.
+
+"El proyecto a desplegar en este laboratorio es una aplicación web. La aplicación permite visualizar una colección de recursos, para efectos de este caso, libros. Igualmente, cuando el usuario selecciona alguno de los recursos, se ofrece una vista con información detallada sobre el recurso seleccionado. La información de los recursos (libros) se encuentra almacenada en base de datos. La aplicación tiene tres (vistas): raíz (“/”, home), descripción detallada de los recursos libros y acerca de."
 
 ## How I design it
 
