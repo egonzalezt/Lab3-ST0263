@@ -179,3 +179,11 @@ To connect to the database on the backend using mongoose the database url look l
 ```bash
 mongo "mongodb://Admin:${DBPASSWORD}@<host>:<port>/admin?authSource=admin"
 ```
+
+## Demo 
+
+[Visit Bookstore](https://lab2.daves.tk/) 
+
+When you visit the webpage you will see 
+
+![image](https://user-images.githubusercontent.com/53051438/163698278-1223733f-205a-4dd7-a666-ca2890e88c94.png)
