@@ -29,6 +29,8 @@ For the monolitic Application i decided to split the application on 4 Layers to 
 
 ![layers](https://user-images.githubusercontent.com/53051438/163697251-c0d155c8-9c59-4523-aa13-0058aa4ad7c9.png)
 
+![Flow lab3](https://user-images.githubusercontent.com/53051438/163699093-e52d002f-be41-4bc5-9cb8-e0ee3b9b18d0.png)
+
 ### Front and Back
 
 The BookStore front and back is provided by the teacher jcmontoy@eafit.edu.co and build it on docker containers.
