@@ -1,9 +1,30 @@
-FROM node:16-alpine
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-RUN npx browserslist@latest --update-db
-RUN npm i postcss-safe-parser
-COPY . .
+# pull official base image
+FROM node:16-alpine AS builder
+
+# set working directory
+WORKDIR /app
+
+COPY package.json ./
+
+# Installs all node packages
+RUN npm install 
+
+
+# Copies everything over to Docker environment
+COPY . ./
+RUN npm run build
+
+#Stage 2
+#######################################
+FROM nginx:1.21.6
+#copies React to the container directory
+# Set working directory to nginx resources directory
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static resources
+RUN rm -rf ./*
+# Copies static resources from builder stage
+COPY --from=builder /app/build .
+
 EXPOSE 3000
-CMD ["npm", "start"]
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
