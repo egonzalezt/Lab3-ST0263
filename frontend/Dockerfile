@@ -25,6 +25,4 @@ RUN rm -rf ./*
 # Copies static resources from builder stage
 COPY --from=builder /app/build .
 
-EXPOSE 3000
-
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
